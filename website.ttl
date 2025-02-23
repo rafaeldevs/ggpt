@@ -1,0 +1,106 @@
+@prefix : <http://camposibs.com/businessParadise/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### Top-Level Job Sections ###
+:ProjectOverview a :Subject ;
+    rdfs:label "Project Overview" ;
+    :order 1 .
+
+:TechnicalRequirements a :Subject ;
+    rdfs:label "Technical Requirements" ;
+    :order 2 .
+
+:GitHubWorkflow a :Subject ;
+    rdfs:label "GitHub Workflow & Branch Management" ;
+    :order 3 .
+
+:Deliverables a :Subject ;
+    rdfs:label "Deliverables" ;
+    :order 4 .
+
+:TimelineBudget a :Subject ;
+    rdfs:label "Timeline & Budget" ;
+    :order 5 .
+
+:QualificationsApply a :Subject ;
+    rdfs:label "Qualifications & How to Apply" ;
+    :order 6 .
+
+:WebsiteFeatures a :Subject ;
+    rdfs:label "Website Features" ;
+    :order 7 .
+
+### Website Features - Child Subjects ###
+
+# Subscriber Management
+:SubscriberManagement a :Subject ;
+    rdfs:label "Subscriber Management" ;
+    :order 1 .
+
+:SubscriberSignUp a :Subject ;
+    rdfs:label "Subscriber Sign-Up" ;
+    :order 1 .
+
+:NewsletterManagement a :Subject ;
+    rdfs:label "Newsletter Notification Management" ;
+    :order 2 .
+
+:SubscriberManagement :hasChild :SubscriberSignUp, :NewsletterManagement .
+
+# E-Commerce
+:ECommerce a :Subject ;
+    rdfs:label "E-Commerce" ;
+    :order 2 .
+
+:ECommerceProductsMerchandise a :Subject ;
+    rdfs:label "E-Commerce Products and Merchandise" ;
+    :order 1 .
+
+:ECommerceMerchandise a :Subject ;
+    rdfs:label "E-Commerce Merchandise" ;
+    :order 2 .
+
+:ECommerceProductBlogs a :Subject ;
+    rdfs:label "E-Commerce Product Blogs" ;
+    :order 3 .
+
+:ECommerce :hasChild :ECommerceProductsMerchandise, :ECommerceMerchandise, :ECommerceProductBlogs .
+
+# Lifestyle Blogs
+:LifestyleBlogs a :Subject ;
+    rdfs:label "Lifestyle Blogs" ;
+    :order 3 .
+
+:LifestyleFitness a :Subject ;
+    rdfs:label "Lifestyle Fitness Blogs" ;
+    :order 1 .
+
+:LifestyleNutricion a :Subject ;
+    rdfs:label "Lifestyle Nutricion Blogs" ;
+    :order 2 .
+
+:LifestyleTravel a :Subject ;
+    rdfs:label "Lifestyle Travel Blogs" ;
+    :order 3 .
+
+:LifestyleBlogs :hasChild :LifestyleFitness, :LifestyleNutricion, :LifestyleTravel .
+
+# Community Integration
+:CommunityIntegration a :Subject ;
+    rdfs:label "Community Integration" ;
+    :order 4 .
+
+:WhatsAppIntegration a :Subject ;
+    rdfs:label "WhatsApp Community Integration" ;
+    :order 1 .
+
+:LiveChat a :Subject ;
+    rdfs:label "Web-based Live Chat Rooms" ;
+    :order 2 .
+
+:CommunityIntegration :hasChild :WhatsAppIntegration, :LiveChat .
+
+# Link Website Features to its Child Subjects
+:WebsiteFeatures :hasChild :SubscriberManagement, :ECommerce, :LifestyleBlogs, :CommunityIntegration .
